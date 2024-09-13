@@ -1,31 +1,32 @@
 'use client';
 import styles from './style.module.scss'
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import Project from './components/project';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import Image from 'next/image';
-import Rounded from '../../common/RoundedButton';
+import Rounded from '@/common/RoundedButton';
+import { useGSAP } from '@gsap/react';
 
 const projects = [
   {
-    title: "C2 Montreal",
-    src: "c2montreal.png",
+    title: "Groq Chat",
+    src: "groq.jpg",
     color: "#000000"
   },
   {
-    title: "Office Studio",
-    src: "officestudio.png",
+    title: "Find Your Weather",
+    src: "weather.jpg",
     color: "#8C8C8C"
   },
   {
-    title: "Locomotive",
-    src: "locomotive.png",
+    title: "Hackon Website",
+    src: "hackon.jpg",
     color: "#EFE8D3"
   },
   {
-    title: "Silencio",
-    src: "silencio.png",
+    title: "Pix2Script",
+    src: "pix.jpg",
     color: "#706D63"
   }
 ]
@@ -51,7 +52,7 @@ export default function Home() {
   let xMoveCursorLabel = useRef(null);
   let yMoveCursorLabel = useRef(null);
 
-  useEffect( () => {
+  useGSAP( () => {
     //Move Container
     xMoveContainer.current = gsap.quickTo(modalContainer.current, "left", {duration: 0.8, ease: "power3"})
     yMoveContainer.current = gsap.quickTo(modalContainer.current, "top", {duration: 0.8, ease: "power3"})
@@ -77,7 +78,7 @@ export default function Home() {
   }
 
   return (
-  <main onMouseMove={(e) => {moveItems(e.clientX, e.clientY)}} className={styles.projects}>
+  <main onMouseMove={(e) => {moveItems(e.clientX, e.clientY)}} className={styles.projects} id='projects'>
     <div className={styles.body}>
       {
         projects.map( (project, index) => {
@@ -86,7 +87,7 @@ export default function Home() {
       }
     </div>
     <Rounded>
-      <p>More work</p>
+      <a href='https://github.com/7sumona02' className={styles.work}><p>More Projects</p></a>
     </Rounded>
     <>
         <motion.div ref={modalContainer} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"} className={styles.modalContainer}>

@@ -5,7 +5,7 @@
     padding-right: 200px;
     flex-direction: column;
     margin-top: 300px;
-
+    margin-bottom: 600px;
     .body{
         max-width: 1400px;
         width: 100%;
@@ -67,6 +67,16 @@
         background-color: transparent;
     }
     
+    .cursorLabel a{
+        cursor: pointer;
+        color: white;
+        text-decoration: none;
+    }
     
+    .work{
+        cursor: pointer;
+        color: black;
+        text-decoration: none;
+    }
 }
 

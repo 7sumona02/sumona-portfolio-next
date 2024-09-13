@@ -36,7 +36,7 @@ export default function Home() {
       <Landing />
       <Description />
       <Projects />
-      <SlidingImages />
+      {/* <SlidingImages /> */}
       <Contact />
     </main>
   )

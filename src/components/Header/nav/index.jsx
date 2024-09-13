@@ -13,20 +13,20 @@ const navItems = [
     href: "/",
   },
   {
-    title: "Work",
-    href: "/work",
+    title: "About",
+    href: "/#about",
   },
   {
-    title: "About",
-    href: "/about",
+    title: "Projects",
+    href: "/#projects",
   },
   {
     title: "Contact",
-    href: "/contact",
+    href: "/#contact",
   },
 ]
 
-export default function index() {
+export default function Index() {
 
   const pathname = usePathname();
   const [selectedIndicator, setSelectedIndicator] = useState(pathname);

@@ -2,10 +2,10 @@ import styles from './style.module.scss';
 import Image from 'next/image';
 import Rounded from '../../common/RoundedButton';
 import { useRef } from 'react';
-import { useScroll, motion, useTransform, useSpring } from 'framer-motion';
+import { useScroll, motion, useTransform } from 'framer-motion';
 import Magnetic from '../../common/Magnetic';
 
-export default function index() {
+export default function Index() {
     const container = useRef(null);
     const { scrollYProgress } = useScroll({
         target: container,
@@ -15,7 +15,7 @@ export default function index() {
     const y = useTransform(scrollYProgress, [0, 1], [-500, 0])
     const rotate = useTransform(scrollYProgress, [0, 1], [120, 90])
     return (
-        <motion.div style={{y}} ref={container} className={styles.contact}>
+        <motion.div style={{y}} ref={container} className={styles.contact} id='contact'>
             <div className={styles.body}>
                 <div className={styles.title}>
                     <span>
@@ -23,10 +23,10 @@ export default function index() {
                             <Image 
                             fill={true}
                             alt={"image"}
-                            src={`/images/background.jpg`}
+                            src={`/images/profile.svg`}
                             />
                         </div>
-                        <h2>Let's work</h2>
+                        <h2>Let&apos;s work</h2>
                     </span>
                     <h2>together</h2>
                     <motion.div style={{x}} className={styles.buttonContainer}>
@@ -40,17 +40,17 @@ export default function index() {
                 </div>
                 <div className={styles.nav}>
                         <Rounded>
-                            <p>info@dennissnellenberg.com</p>
+                            <p><a href="mailto:sumona.23548@sscbs.du.ac.in">Gmail</a></p>
                         </Rounded>
                         <Rounded>
-                            <p>+31 6 27 84 74 30</p>
+                            <p><a href='https://www.linkedin.com/in/sumona-biswas/'>LinkedIn</a></p>
                         </Rounded>
                 </div>
                 <div className={styles.info}>
                     <div>
                         <span>
                             <h3>Version</h3>
-                            <p>2022 © Edition</p>
+                            <p>2024 © Edition</p>
                         </span>
                         <span>
                             <h3>Version</h3>

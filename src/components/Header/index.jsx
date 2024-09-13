@@ -8,14 +8,15 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Rounded from '../../common/RoundedButton';
 import Magnetic from '../../common/Magnetic';
+import { useGSAP } from '@gsap/react';
 
-export default function index() {
+export default function Index() {
     const header = useRef(null);
     const [isActive, setIsActive] = useState(false);
     const pathname = usePathname();
     const button = useRef(null);
 
-    useEffect( () => {
+    useGSAP( () => {
       if(isActive) setIsActive(false)
     }, [pathname])
 
@@ -39,26 +40,26 @@ export default function index() {
                 <p className={styles.copyright}>©</p>
                 <div className={styles.name}>
                     <p className={styles.codeBy}>Code by</p>
-                    <p className={styles.dennis}>Dennis</p>
-                    <p className={styles.snellenberg}>Snellenberg</p>
+                    <p className={styles.dennis}>Sumona</p>
+                    <p className={styles.snellenberg}>&nbsp;Biswas</p>
                 </div>
             </div>
             <div className={styles.nav}>
                 <Magnetic>
                     <div className={styles.el}>
-                        <a>Work</a>
+                        <a href='/#about'>About</a>
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>
                 <Magnetic>
                     <div className={styles.el}>
-                        <a>About</a>
+                        <a href='/#projects'>Projects</a>
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>
                 <Magnetic>
                     <div className={styles.el}>
-                        <a>Contact</a>
+                        <a href='/#contact'>Contact</a>
                         <div className={styles.indicator}></div>
                     </div>
                 </Magnetic>

@@ -1,11 +1,12 @@
 'use client'
-import Image from 'next/image'
 import styles from './style.module.scss'
-import { useRef, useLayoutEffect } from 'react';
+import { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { slideUp } from './animation';
 import { motion } from 'framer-motion';
+import Robot from '../Robot';
+import { useGSAP } from '@gsap/react';
 
 export default function Home() {
 
@@ -15,7 +16,7 @@ export default function Home() {
   let xPercent = 0;
   let direction = -1;
 
-  useLayoutEffect( () => {
+  useGSAP( () => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.to(slider.current, {
       scrollTrigger: {
@@ -45,11 +46,13 @@ export default function Home() {
 
   return (
     <motion.main variants={slideUp} initial="initial" animate="enter" className={styles.landing}>
-      <Image 
-        src="/images/background.jpg"
+      <Robot />
+      {/* <Image 
+        src="/images/background.svg"
         fill={true}
         alt="background"
-      />
+      /> */}
+      
       <div className={styles.sliderContainer}>
         <div ref={slider} className={styles.slider}>
           <p ref={firstText}>Freelance Developer -</p>
