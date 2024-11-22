@@ -10,23 +10,23 @@ import { useGSAP } from '@gsap/react';
 
 const projects = [
   {
-    title: "Groq Chat",
+    title: "AI Chat Bot",
     src: "groq.jpg",
     color: "#000000"
   },
   {
-    title: "Find Your Weather",
-    src: "weather.jpg",
+    title: "Real-time Chat App",
+    src: "rtc.png",
     color: "#8C8C8C"
   },
   {
-    title: "Hackon Website",
-    src: "hackon.jpg",
+    title: "VibeConnect",
+    src: "vc.png",
     color: "#EFE8D3"
   },
   {
-    title: "Pix2Script",
-    src: "pix.jpg",
+    title: "Music Space",
+    src: "ms.png",
     color: "#706D63"
   }
 ]
